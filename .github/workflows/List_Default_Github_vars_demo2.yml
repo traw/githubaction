@@ -8,7 +8,7 @@ jobs:
         name: "Print the default github vars"
         runs-on: ubuntu-latest
 
-        streps:
+        steps:
         - name: print-values-of-env vars
           run: |
             echo "$GITHUB_ACTION"
