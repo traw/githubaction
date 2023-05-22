@@ -12,7 +12,7 @@ jobs:
     windows-environment-variables:
         runs-on: windows-latest
         steps:
-            run: env
+           - run: env
 
     macos-environment-variables:
         runs-on: macos-latest
