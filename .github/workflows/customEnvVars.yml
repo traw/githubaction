@@ -10,7 +10,7 @@ env:
 jobs:
     greeting_job:
         runs-on: ubuntu-latest
-        evn:
+        env:
             Greeting: Hello
         steps:
         - name: "Say hello Mona it's Monday"
