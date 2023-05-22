@@ -13,3 +13,5 @@ jobs:
           run: |
             echo "$GITHUB_ACTION"
             echo "$GITHUB_ENV"
+            echo "my top secret ${{secrets.MY_SECRET}}"
+            echo "my top secret ${{secrets.MY_SECRET_NOT}}"
