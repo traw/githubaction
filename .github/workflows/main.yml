@@ -1,1 +1,40 @@
+name: A basic Workflow
 
+# Controls when the workflow will run
+on:
+  # Triggers thw workflow on push or pull request events but only for main branch
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  
+  workflow_dispatch:
+      
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@3
+      
+      - name: Run a one-line script
+        run: echo "Hello, world!"
+      
+      - name: Run a multi-line script
+        run: |
+          echo "Add other actions to build"
+          echo "test, and deploy your project"
+
+  build-api:
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - run: echo "building API"
+
+  package:
+    needs: [build, build-db]
+    runs-on: macos-latest
+    steps:
+      - run: echo "Hello MacOS"
