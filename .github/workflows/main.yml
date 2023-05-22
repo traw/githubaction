@@ -34,7 +34,7 @@ jobs:
       - run: echo "building API"
 
   package:
-    needs: [build, build-db]
+    needs: [build, build-api]
     runs-on: macos-latest
     steps:
       - run: echo "Hello MacOS"
